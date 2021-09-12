@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../scss/login.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Jobs - EMS</title>
+</head>
+<body>
+    <!--nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mt-2 ">
+        <div class="container-fluid" style="justify-content:space-between;">
+            <a class="navbar-brand" href="dash.html">
+                <img src="../assets/logo.png" alt="" width="89" height="55" class="d-inline-block align-text-top">
+              </a>
+          <a class="navbar-brand fs-1 " href="dash.html">MyEMS.com</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mt-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="dash.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="employees.html">Our Employees</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="jobs.html">Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About us</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" aria-label="Search">
+              <button class="btn btn-outline-success" type="search"><i class="bi bi-search"></i></button>
+            </form>
+            <a href="index.html" class="ms-3 btn btn-danger"data-toggle="tooltip" data-placement="bottom" title="Log Out"><i class="bi bi-box-arrow-right"></i></a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+          <div class="row mt-5">
+              <div class="col-lg-3 col-md-3">
+                <div class="card bx">
+                    <div class="card-body ">
+                        <h3 class="card-title">Jobs </h3> <br>
+                        <div class="list-group-flush list-group-flush-0">
+                            <a href="jobs.html" class="list-group-item list-group-item-action fs-5 text-muted">Show all jobs</a>
+                            <a href="#" class="list-group-item list-group-item-action  fs-5 text-muted" data-bs-toggle="modal" data-bs-target="#add_job">Add a new job title</a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-9 col-md-9">
+                 <table class="table table-striped table-hover bg-light bx">
+                     <tr class="table-dark">
+                       <th>ID</th>
+                         <th>Job Title</th>
+                         <th>Work Exp. Required</th>
+                         <th><center>Edit</center></th>
+                         <th><center>Remove </center></th>
+                     </tr>
+                     <tr>
+                       <td>1</td>
+                        <td>SDE-1</td>
+                        <td>0 years</td>
+                        <td><center><a href="btn-sm" data-bs-toggle="modal" data-bs-target="#edit_job"><i class="bi bi-pencil-square" style="font-size: large; color: rgb(3, 173, 54);"></i></a></center></td>
+                        <td><center><a href="#" class="btn-sm" onclick="confirm('Are you sure you want to delete \'SDE-1\'?')"><i class="bi bi-trash-fill" style="color:rgb(117, 4, 4); font-size: large;"></i></a></center></td>
+                    </tr>
+                     <tr> <td>2</td>
+                      <td>SDE-2</td>
+                      <td>More than 1 year</td>
+                        <td><center><a href="btn-sm"><i class="bi bi-pencil-square" style="font-size: large; color: rgb(3, 173, 54);"></i></a></center></td>
+                        <td><center><a href="#" class="btn-sm"><i class="bi bi-trash-fill" style="color:rgb(117, 4, 4); font-size: large;"></i></a></center></td>
+                    </tr>
+                    <tr><td>3</td>
+                        <td>SDE-3</td>
+                        <td>More than 2 years</td>
+                        <td><center><a href="btn-sm"><i class="bi bi-pencil-square" style="font-size: large; color: rgb(3, 173, 54);"></i></a></center></td>
+                        <td><center><a href="#" class="btn-sm"><i class="bi bi-trash-fill" style="color:rgb(117, 4, 4); font-size: large;"></i></a></center></td>
+                    </tr>
+                    <tr><td>4</td>
+                        <td>Project Analyst</td>
+                        <td>1 year</td>
+                        <td><center><a href="btn-sm"><i class="bi bi-pencil-square" style="font-size: large; color: rgb(3, 173, 54);"></i></a></center></td>
+                        <td><center><a href="#" class="btn-sm"><i class="bi bi-trash-fill" style="color:rgb(117, 4, 4); font-size: large;"></i></a></center></td>
+                    </tr>
+                    <tr><td>5</td>
+                        <td>Senior Engineer</td>
+                        <td>More than 4 years</td>
+                        <td><center><a href="btn-sm"><i class="bi bi-pencil-square" style="font-size: large; color: rgb(3, 173, 54);"></i></a></center></td>
+                        <td><center><a href="#" class="btn-sm"><i class="bi bi-trash-fill" style="color:rgb(117, 4, 4); font-size: large;"></i></a></center></td>
+                    </tr>
+                    
+
+                 </table>
+              </div>
+          </div>
+      </div>
+
+      <!--modal-->
+
+      <div class="modal fade" id="add_job" tabindex="-1" aria-labelledby="add_job" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add a new job</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3 mt-4">
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control form-block" placeholder="Job Title" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <select class="form-select" aria-label="Default select example" required>
+                            <option selected>Work Experience Required</option>
+                            <option value="l 6 months">&lt;6 months </option>
+                            <option value="l 1 year">&lt;1 year</option>
+                            <option value="l 2 years">&lt;2 years</option>
+                            <option value="l 3 years">&lt;3 years</option>
+                            <option value="m 3 years">&gt;3 years</option>
+                          </select>
+                    </div>
+                    <div class="mb-3 d-grid gap-2">
+                        <button type="button" class="btn btn-block btn-success" style="background-color: rgb(14, 153, 207);">Submit</button>
+                    </div>
+                </div>
+
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!--Edit Modal-->
+      <div class="modal fade" id="edit_job" tabindex="-1" aria-labelledby="edit_job" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Job Title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                  <div class="mb-3 mt-4">
+                      <input type="date" class="form-control" required>
+                  </div>
+                  <div class="mb-3">
+                      <input type="text" class="form-control form-control form-block" placeholder="Job Title" required>
+                  </div>
+                  
+                  <div class="mb-3">
+                      <select class="form-select" aria-label="Default select example" required>
+                          <option selected>Work Experience Required</option>
+                          <option value="l 6 months">&lt;6 months </option>
+                          <option value="l 1 year">&lt;1 year</option>
+                          <option value="l 2 years">&lt;2 years</option>
+                          <option value="l 3 years">&lt;3 years</option>
+                          <option value="m 3 years">&gt;3 years</option>
+                        </select>
+                  </div>
+                  <div class="mb-3 d-grid gap-2">
+                      <button type="button" class="btn btn-block btn-success" style="background-color: rgb(14, 153, 207);">Update</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+
+    
+<script src="../src/index.js"></script>
+</body>
+</html>
